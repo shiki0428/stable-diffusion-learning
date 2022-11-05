@@ -8,7 +8,7 @@ device =  "mps"
 pipe = StableDiffusionPipeline.from_pretrained("lambdalabs/sd-pokemon-diffusers", use_auth_token=True)  
 pipe = pipe.to(device)
 
-prompt = "Charizard"
+prompt = "Fish"
 scale = 10
 n_samples = 1
 
@@ -42,4 +42,4 @@ def createImage(output_name:str,count:int):
     images = pipe(prompt=prompt,  guidance_scale=7.5).images
     images[0].save(output_name + '_' +str(count).zfill(4) +'.jpg')
 
-createImage("output",2)
+createImage("output",3)
